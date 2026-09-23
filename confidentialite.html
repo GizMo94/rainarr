@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rainarr — Politique de confidentialité</title>
+  <style>
+    :root {
+      --bg: #f7f7f8;
+      --fg: #1c1d21;
+      --muted: #5d606b;
+      --line: #dcdde2;
+      --accent: #7c4dff;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121317;
+        --fg: #ececf1;
+        --muted: #a3a6b3;
+        --line: #2c2e36;
+        --accent: #b39dff;
+      }
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 32px 16px 64px;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin: 0 0 4px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin: 32px 0 8px;
+    }
+
+    p,
+    li {
+      color: var(--fg);
+    }
+
+    .meta,
+    .note {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .92rem;
+      margin: 8px 0;
+    }
+
+    th,
+    td {
+      text-align: left;
+      vertical-align: top;
+      padding: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .wrap {
+      overflow-x: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>Politique de confidentialité de Rainarr</h1>
+    <p class="meta">En vigueur le {23/09/2026} · <a href="privacy.html">English version</a></p>
+
+    <h2>En bref</h2>
+    <ul>
+      <li>Rainarr est une application mobile qui pilote <strong>tes propres serveurs</strong> multimédia (Plex, Radarr,
+        Sonarr, Prowlarr, Tautulli, Seerr, client torrent).</li>
+      <li>Rainarr n'a <strong>aucun serveur</strong> : aucune donnée ne parvient à l'éditeur.</li>
+      <li>Aucune publicité, aucune mesure d'audience, aucun rapport de plantage envoyé.</li>
+      <li>Tes identifiants restent sur ton appareil, chiffrés.</li>
+    </ul>
+
+    <h2>Qui édite Rainarr</h2>
+    <p>Rainarr est édité par Rick Deckard, personne physique résidant en France. Pour toute question sur tes données :
+      <a href="mailto:card.dicked@gmail.com">card.dicked@gmail.com</a>.</p>
+    <p>L'éditeur ne reçoit, ne stocke et ne traite aucune donnée personnelle. Les traitements décrits ci-dessous ont
+      lieu sur ton appareil, à ton initiative, ou chez les services que tu choisis de connecter.</p>
+
+    <h2>Ce qui est stocké sur ton appareil</h2>
+    <div class="wrap">
+      <table>
+        <tr>
+          <th>Donnée</th>
+          <th>Protection</th>
+        </tr>
+        <tr>
+          <td>Adresses de tes serveurs, clés d'API, jetons, identifiants et mots de passe de ton client torrent et de
+            tes sources</td>
+          <td>Chiffrés, avec une clé gardée par le système (Keystore Android, trousseau iOS)</td>
+        </tr>
+        <tr>
+          <td>Si tu rejoins un serveur en invité : adresse du serveur Seerr, session, nom affiché (ton adresse e-mail si
+            ton compte n'a pas de nom) et avatar</td>
+          <td>Chiffrés</td>
+        </tr>
+        <tr>
+          <td>Historique de recherche (8 dernières recherches films et séries)</td>
+          <td>Chiffré</td>
+        </tr>
+        <tr>
+          <td>Favoris, téléchargements suivis, disposition de l'accueil, langue choisie</td>
+          <td>Stockage privé de l'application</td>
+        </tr>
+        <tr>
+          <td>Images d'affiches et d'avatars mises en cache</td>
+          <td>Stockage privé de l'application, renouvelé automatiquement</td>
+        </tr>
+      </table>
+    </div>
+    <p>Si tu scannes le QR code d'une invitation, la caméra n'est demandée qu'à ce moment. L'image, de la caméra ou de
+      ta galerie, est lue sur ton appareil puis oubliée : elle n'est ni enregistrée ni envoyée, seule l'adresse du
+      serveur est gardée.</p>
+    <p>Ces données ne quittent pas ton appareil par une sauvegarde : Rainarr est exclu de la sauvegarde Google et du
+      transfert entre téléphones, et sa clé de chiffrement ne suit pas une sauvegarde iCloud.</p>
+
+    <h2>Ce qui est transmis, et à qui</h2>
+    <p><strong>À tes serveurs.</strong> Rainarr envoie à chaque serveur que tu configures ce qu'il faut pour le piloter
+      : sa clé ou tes identifiants, tes recherches, les films et séries que tu ajoutes, demandes ou supprimes. Tu
+      choisis ces serveurs ; l'éditeur n'y a pas accès. Les identifiants ne partent qu'en connexion chiffrée (HTTPS), ou
+      vers ton réseau local.</p>
+    <p><strong>En arrière-plan, si tu actives des notifications</strong> : environ tous les quarts d'heure, Rainarr
+      interroge ces mêmes serveurs pour savoir ce qui a changé — tes demandes, les nouvelles demandes, les
+      téléchargements terminés, les services qui ne répondent plus. Rien d'autre n'est contacté, et tout est coupé tant
+      que tu n'actives aucune notification.</p>
+    <p><strong>Si tu signales un problème</strong> : Rainarr prépare un rapport — version, modèle de téléphone, langue
+      et dernières erreurs, sans adresse ni identifiant — et te le montre en entier. Il ne part que si tu le partages,
+      et là où tu choisis de l'envoyer.</p>
+    <p><strong>À quelques services tiers</strong>, qui reçoivent aussi l'adresse IP de ton appareil :</p>
+    <div class="wrap">
+      <table>
+        <tr>
+          <th>Service</th>
+          <th>Données</th>
+          <th>Pourquoi</th>
+        </tr>
+        <tr>
+          <td><a href="https://www.themoviedb.org/privacy-policy">TMDB</a> (The Movie Database)</td>
+          <td>Tes recherches, les fiches consultées, la langue de l'application et le pays de ton appareil</td>
+          <td>Afficher le catalogue, les fiches et les affiches</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.plex.tv/about/privacy-legal/">Plex</a> (plex.tv)</td>
+          <td>Un identifiant propre à ton installation ; la connexion à ton compte Plex se fait sur le site de Plex,
+            dans ton navigateur</td>
+          <td>Te connecter en invité à un serveur ; afficher les comptes avec qui tu partages ton serveur</td>
+        </tr>
+        <tr>
+          <td><a href="https://policies.google.com/privacy">YouTube</a></td>
+          <td>L'identifiant de la bande-annonce</td>
+          <td>Afficher sa vignette et l'ouvrir si tu la touches</td>
+        </tr>
+        <tr>
+          <td>Indexeurs que tu configures</td>
+          <td>Tes recherches ; puis la récupération du fichier torrent à l'adresse que l'indexeur indique, qui peut être
+            un autre site</td>
+          <td>Trouver et envoyer un téléchargement à ton client</td>
+        </tr>
+      </table>
+    </div>
+    <p>Chacun de ces services traite ces données selon sa propre politique.</p>
+
+    <h2 id="invite">Si tu rejoins un serveur en invité</h2>
+    <p>Tu te connectes avec ton compte Plex, sur le site de Plex. Rainarr reçoit alors un jeton de ton compte, le
+      transmet au serveur Seerr que tu rejoins pour ouvrir ta session, puis <strong>ne le garde pas</strong>. Si ce
+      serveur autorise la connexion de nouveaux utilisateurs Plex, cette première connexion <strong>y crée un compte à
+        ton nom</strong>, à partir de ton compte Plex ; sinon, elle est refusée.</p>
+    <p>Ce compte appartient au serveur Seerr, pas à Rainarr. Quand tu quittes un serveur, Rainarr ferme ta session et
+      efface ce qu'il en gardait sur ton appareil, mais <strong>ton compte reste sur le serveur</strong> : seule la
+      personne qui l'administre peut le supprimer, et c'est à elle qu'il faut le demander.</p>
+
+    <h2>Combien de temps, et comment effacer</h2>
+    <ul>
+      <li>Tes données restent sur ton appareil tant que tu ne les effaces pas.</li>
+      <li><strong>Réglages → Effacer toutes les données</strong> retire tout ce que Rainarr garde sur l'appareil et
+        ferme tes sessions invitées. Rien n'est supprimé sur tes serveurs.</li>
+      <li>Désinstaller l'application efface aussi ses données.</li>
+    </ul>
+
+    <h2>Tes droits</h2>
+    <p>L'éditeur ne détenant aucune donnée te concernant, tes droits d'accès, de rectification et d'effacement
+      s'exercent directement dans l'application. Pour les données détenues par tes serveurs ou par les services tiers,
+      adresse-toi à leur administrateur ou à leur éditeur. Pour toute question : <a
+        href="mailto:{CONTACT}">{CONTACT}</a>. Tu peux aussi adresser une réclamation à la <a
+        href="https://www.cnil.fr/fr/plaintes">CNIL</a>.</p>
+
+    <h2>Mineurs</h2>
+    <p>Rainarr s'adresse aux personnes de 18 ans et plus.</p>
+
+    <h2>Modifications</h2>
+    <p>Toute modification de cette politique est publiée sur cette page, avec sa date d'entrée en vigueur.</p>
+    <p class="note">Historique : 23/09/2026 — première version.</p>
+  </main>
+</body>
+
+</html>
